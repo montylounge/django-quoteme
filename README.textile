@@ -2,9 +2,9 @@
 
 h1. Introduction
 
-A reusable 'Django':http://djangoproject.com application for managing quotes and testimonials.
+A reusable "Django":http://djangoproject.com application for managing quotes and testimonials.
 
-I've created this both for my old blog 'howiworkdaily.com':http://howiworkdaily.com and for my company site 'montylounge.com':http://montylounge.com so why not make it reusable?
+I"ve created this both for my old blog "howiworkdaily.com":http://howiworkdaily.com and for my company site "montylounge.com":http://montylounge.com so why not make it reusable?
 
 
 h2. Notes
