@@ -1,0 +1,16 @@
+<div>
+    <div>
+        {% if object.quote %}
+            <blockquote>{{ object.quote }}</blockquote>
+        {% endif %}
+    </div>
+    <div>
+        {% if object.author %}
+      {% if object.url_source %}
+            <p><a href="{{ object.url_source }}">{{ object.author }}</a>{% if object.official_title %}, {{ object.official_title }}{% endif %}{% if object.company %}, {{ object.company }}{% endif %}</p>
+      {% else %}
+            <p>{{ object.author }}{% if object.official_title %}, {{ object.official_title }}{% endif %}{% if object.company %}, {{ object.company }}{% endif %}</p>
+      {% endif %}
+        {% endif %}
+    </div>
+</div>

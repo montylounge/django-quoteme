@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load quoteme_tags %}
+
+{% block content %}
+<h1>Django-QuoteMe</h1>
+<ul style="margin-bottom: 2.8em">
+    <li><a href="{% url quote_list %}">View Quotes</a></li>
+    <li><a href="{% url testimonial_list %}">View Testimonials</a></li>
+</ul>
+
+<h2>Random Quote</h2>
+{% get_recommended_quote as object %}
+<div>
+    <h3><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h3>
+    <div>
+        {% if object.quote %}
+            <blockquote>{{ object.quote }}</blockquote>
+        {% endif %}
+    </div>
+    <div>
+        {% if object.author %}
+      {% if object.url_source %}
+            <span><a href="{{ object.url_source }}">{{ object.author }}</a></span>
+      {% else %}
+      <span>{{ object.author }} {% if object.circa %}, {{ object.circa }}{% endif %}</span>
+      {% endif %}
+
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
