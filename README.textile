@@ -26,3 +26,4 @@ h2. Quickstart
   <code>(r'^quotes/', include('quoteme.urls')),</code>
 
 4. execute syncdb to add initial_data
+
