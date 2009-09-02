@@ -11,3 +11,18 @@ h2. Notes
 
 Out of the box the application provides a list and detail view for <code>Quote</code> objects and a list view for <code>Testimonial</code> objects.
 
+
+h2. Dependencies
+
+django-tagging
+
+
+h2. Quickstart
+
+1. Add the _quoteme_ directory on your PYTHON
+2. Add _quoteme_ to the <code>INSTALLED_APPS</code> setting of your Django project.
+3. Add this line to your site's root URLConf
+
+  <code>(r'^quotes/', include('quoteme.urls')),</code>
+
+4. execute syncdb to add initial_data
