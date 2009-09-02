@@ -26,7 +26,7 @@ def quote_detail(request, slug, template_name='object_detail.html', extra_contex
     if request.user.is_staff:
         quotes = Quote.objects.all()
     else:
-        quotes = Quote.object.published()
+        quotes = Quote.objects.published()
 
     return object_detail(request,
                         quotes,
