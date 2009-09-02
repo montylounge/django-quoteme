@@ -2,6 +2,8 @@
 
 h1. Introduction
 
+This project is in early alpha so please post issues, etc that you may find. All feedback is appreciated, thx!
+
 A reusable "Django":http://djangoproject.com application for managing quotes and testimonials.
 
 I"ve created this both for my old blog "howiworkdaily.com":http://howiworkdaily.com and for my company site "montylounge.com":http://montylounge.com so why not make it reusable?
