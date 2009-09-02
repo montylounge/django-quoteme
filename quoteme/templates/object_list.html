@@ -1,15 +1,16 @@
-{% extends 'base.html' %}
-
-{% block content %}
+<html>
+<body>
 
 <h1>{{ type|capfirst }} List</h1>
 
 {% for object in object_list %}
     {% ifequal type 'testimonial' %}
         {% include 'includes/_testimonial.html' %}
-	{% endifequal  %}
+  {% endifequal  %}
     {% ifequal type 'quote' %}
         {% include 'includes/_quote.html' %}
     {% endifequal %}
 {% endfor %}
-{% endblock %}
+
+</body>
+</html>
