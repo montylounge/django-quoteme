@@ -76,6 +76,6 @@ def do_get_random_testimonial(parser, token):
 
     if args[1] != 'as':
         raise TemplateSyntaxError, "second argument to the %s tag must be 'as'" % args[0]
-    return RandomQuoteNode(variable)
+    return RandomTestimonialNode(variable)
 
 register.tag('get_random_testimonial', do_get_random_testimonial)
