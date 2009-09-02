@@ -41,7 +41,7 @@ def do_get_random_quote(parser, token):
         raise TemplateSyntaxError, "second argument to the %s tag must be 'as'" % args[0]
     return RandomQuoteNode(variable)
 
-register.tag('get_recommended_quote', do_get_random_quote)
+register.tag('get_random_quote', do_get_random_quote)
 
 
 class RandomTestimonialNode(Node):
