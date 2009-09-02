@@ -21,11 +21,19 @@ django-tagging
 
 h2. Quickstart
 
-1. Add the _quoteme_ directory on your PYTHON
-2. Add _quoteme_ to the <code>INSTALLED_APPS</code> setting of your Django project.
-3. Add this line to your site's root URLConf
+h3. Example app
+
+# cd into django-quoteme/example
+# ./manage.py syncdb
+# ./manage.py runserver
+# open browser -> http://127.0.0.1:8000
+
+h3. Integrate into your app
+# Add the _quoteme_ directory on your PYTHON
+# Add _quoteme_ to the <code>INSTALLED_APPS</code> setting of your Django project.
+# Add this line to your site's root URLConf
 
   <code>(r'^quotes/', include('quoteme.urls')),</code>
 
-4. execute syncdb to add initial_data
+# execute syncdb to add initial_data
 
