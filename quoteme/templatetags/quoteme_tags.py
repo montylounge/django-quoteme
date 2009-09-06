@@ -1,11 +1,10 @@
 from django import template
 from django.template import Node
-from django.db import models
+from quoteme.models import Quote, Testimonial
 
-Quote = models.get_model('quoteme', 'Quote')
-Testimonial = models.get_model('quoteme', 'Testimonial')
 
 register = template.Library()
+
 
 class RandomQuoteNode(Node):
     def __init__(self, varname):
@@ -20,8 +19,9 @@ class RandomQuoteNode(Node):
             pass
         return ''
 
+
 def do_get_random_quote(parser, token):
-    '''
+    """
     Returns a random quote or testmonial.
 
     Example usage::
@@ -29,16 +29,17 @@ def do_get_random_quote(parser, token):
         {% load quotme %}
         {% get_random_quote as variable %}
 
-    '''
+    """
 
     args = token.contents.split()
     if len(args) == 3:
         variable = args[2]
     else:
-        raise TemplateSyntaxError, "%s tag takes exactly 1 argument" % args[0]
+        raise TemplateSyntaxError("%s tag takes exactly 1 argument" % args[0])
 
     if args[1] != 'as':
-        raise TemplateSyntaxError, "second argument to the %s tag must be 'as'" % args[0]
+        raise TemplateSyntaxError("second argument to the %s tag must be 'as'"
+                                  % args[0])
     return RandomQuoteNode(variable)
 
 register.tag('get_random_quote', do_get_random_quote)
@@ -57,8 +58,9 @@ class RandomTestimonialNode(Node):
             pass
         return ''
 
+
 def do_get_random_testimonial(parser, token):
-    '''
+    """
     Returns a random quote or testmonial.
 
     Example usage::
@@ -66,16 +68,17 @@ def do_get_random_testimonial(parser, token):
         {% load quotme %}
         {% get_random_testimonial as variable %}
 
-    '''
+    """
 
     args = token.contents.split()
     if len(args) == 3:
         variable = args[2]
     else:
-        raise TemplateSyntaxError, "%s tag takes exactly 1 argument" % args[0]
+        raise TemplateSyntaxError("%s tag takes exactly 1 argument" % args[0])
 
     if args[1] != 'as':
-        raise TemplateSyntaxError, "second argument to the %s tag must be 'as'" % args[0]
+        raise TemplateSyntaxError("second argument to the %s tag must be 'as'"
+                                  % args[0])
     return RandomTestimonialNode(variable)
 
 register.tag('get_random_testimonial', do_get_random_testimonial)
