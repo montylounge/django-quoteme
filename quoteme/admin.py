@@ -1,8 +1,8 @@
 from django.contrib import admin
-from quoteme.models import Quote, Testimonial
+from quoteme import models
 
 
-class QuoteAdmin(admin.ModelAdmin):
+class Quote(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     list_display = ('author', 'quote', 'status')
 
@@ -13,7 +13,7 @@ class QuoteAdmin(admin.ModelAdmin):
     )
 
 
-class TestimonialAdmin(admin.ModelAdmin):
+class Testimonial(admin.ModelAdmin):
     list_display = ('author', 'company', 'quote', 'status')
 
     fieldsets = (
@@ -23,5 +23,5 @@ class TestimonialAdmin(admin.ModelAdmin):
     )
 
 
-admin.site.register(Quote, QuoteAdmin)
-admin.site.register(Testimonial, TestimonialAdmin)
+admin.site.register(models.Quote, Quote)
+admin.site.register(models.Testimonial, Testimonial)
