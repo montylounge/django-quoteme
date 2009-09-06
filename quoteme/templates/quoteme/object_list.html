@@ -5,10 +5,10 @@
 
 {% for object in object_list %}
     {% ifequal type 'testimonial' %}
-        {% include 'includes/_testimonial.html' %}
+        {% include 'quoteme/includes/_testimonial.html' %}
   {% endifequal  %}
     {% ifequal type 'quote' %}
-        {% include 'includes/_quote.html' %}
+        {% include 'quoteme/includes/_quote.html' %}
     {% endifequal %}
 {% endfor %}
 

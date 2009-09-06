@@ -4,7 +4,8 @@ from django.conf import settings
 
 from quoteme.models import Quote, Testimonial
 
-def quote_list(request, page=1, template_name='object_list.html', extra_context={}, **kwargs):
+def quote_list(request, page=1, template_name='quoteme/object_list.html',
+               extra_context={}, **kwargs):
     '''List view for quotes. '''
 
     quotes = Quote.objects.published()
@@ -20,7 +21,8 @@ def quote_list(request, page=1, template_name='object_list.html', extra_context=
                        extra_context = extra, **kwargs)
 
 
-def quote_detail(request, slug, template_name='object_detail.html', extra_context={}, **kwargs):
+def quote_detail(request, slug, template_name='quoteme/object_detail.html',
+                 extra_context={}, **kwargs):
     '''Detail view for quote. Staff users can see unpublished quotes.'''
 
     if request.user.is_staff:
@@ -35,7 +37,8 @@ def quote_detail(request, slug, template_name='object_detail.html', extra_contex
                         extra_context = extra_context,
                         **kwargs)
 
-def testimonial_list(request, page=1, template_name='object_list.html', extra_context={}, **kwargs):
+def testimonial_list(request, page=1, template_name='quoteme/object_list.html',
+                     extra_context={}, **kwargs):
     '''List view for testimonial. '''
 
     testimonials = Testimonial.objects.published()
@@ -49,5 +52,3 @@ def testimonial_list(request, page=1, template_name='object_list.html', extra_co
                        paginate_by = getattr(settings,'QUOTEME_TESTIMONIAL_PAGE_SIZE', 20),
                        template_name = template_name,
                        extra_context = extra, **kwargs)
-
-

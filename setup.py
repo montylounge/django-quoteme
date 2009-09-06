@@ -8,6 +8,6 @@ setup(
     author_email='kfricovsky@gmail.com',
     url='http://github.com/montylounge/django-quoteme/tree/master',
     packages=['quoteme', 'quoteme.templatetags'],
-    package_data={'quoteme': ['fixtures/*.json', 'templates/*.*',
-                              'templates/includes/*.*']}
+    package_data={'quoteme': ['fixtures/*.json', 'templates/quoteme/*.*',
+                              'templates/quoteme/includes/*.*']}
 )
