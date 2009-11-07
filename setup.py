@@ -7,7 +7,17 @@ setup(
     author='Kevin Fricovsky',
     author_email='kfricovsky@gmail.com',
     url='http://github.com/montylounge/django-quoteme/tree/master',
-    packages=['quoteme', 'quoteme.templatetags'],
-    package_data={'quoteme': ['fixtures/*.json', 'templates/quoteme/*.*',
-                              'templates/quoteme/includes/*.*']}
+    packages=[
+        'quoteme',
+        'quoteme.templatetags'
+    ],
+    classifiers=[
+        'Development Status :: 3 - Alpha',
+        'Environment :: Web Environment',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: BSD License',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python',
+        'Framework :: Django',
+    ],
 )
