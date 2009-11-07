@@ -20,7 +20,6 @@ The reusable app only depends on <code>django-tagging</code>.
 
 The example application depends on:
 
-* Django
 * Django-FlatBlocks
 * Django-Tagging
 
