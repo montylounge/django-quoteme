@@ -1,0 +1,49 @@
+
+h1. Introduction
+
+A reusable "Django":http://djangoproject.com application for managing quotes and testimonials.
+
+I"ve created this both for my old blog "howiworkdaily.com":http://howiworkdaily.com and for my company site "montylounge.com":http://montylounge.com so why not make it reusable?
+
+It was also made reusable as a reference reusable app for a forthcoming PyMag article.
+
+
+h2. Notes
+
+Out of the box the application provides a list and detail view for <code>Quote</code> objects and a list view for <code>Testimonial</code> objects, as well as a template tag for for generating random display of <code>Quote</code> or <code>Testinmonial</code> objects.
+
+The application also provides an example project to quickly demo its features.
+
+h2. Project Dependencies
+
+The reusable app only depends on <code>django-tagging</code>.
+
+The example application depends on:
+
+* Django
+* Django-FlatBlocks
+* Django-Tagging
+
+
+h2. Quickstart
+The below are the instructions for demo-ing the project.
+
+# mkvirtualenv quoteme
+# easy_install pip
+# cd quoteme
+# git clone git://github.com/montylounge/django-quoteme.git
+# cd into django-quoteme/example
+# pip install -r requirements
+# ./manage.py syncdb
+# ./manage.py runserver
+# open browser -> http://127.0.0.1:8000
+
+h3. Integrate into your app
+# Add the _quoteme_ directory on your PYTHON
+# Add _quoteme_ to the <code>INSTALLED_APPS</code> setting of your Django project.
+# Add this line to your site's root URLConf
+
+  <code>(r'^quotes/', include('quoteme.urls')),</code>
+
+# execute syncdb to add initial_data
+

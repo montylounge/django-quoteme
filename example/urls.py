@@ -7,7 +7,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^admin/(.*)', admin.site.root),
-    url(r'^$', direct_to_template, {'template':'example_home.html'}),
+    url(r'^custom_example/', 'example.views.custom_quote_list', name='custom_example'),
     (r'^quotes/', include('quoteme.urls')),
+    url(r'^$', direct_to_template, {'template':'quoteme/example_home.html'}),
 )
 

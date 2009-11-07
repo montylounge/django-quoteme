@@ -3,7 +3,7 @@
 <html>
 <body>
 
-<h1>{% trans "List View" %}</h1>
+<h1>{% trans "List by tag:" %} {{ tag }}</h1>
 
 {% for object in object_list %}
     {% ifequal type 'testimonial' %}

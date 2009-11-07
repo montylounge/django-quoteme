@@ -3,12 +3,21 @@
 <html>
 <body>
 
-<h1>{% trans "List View" %}</h1>
+<h1>{% trans "Example overrding view" %}</h1>
+
+<hr/>
+
+<h4>{% trans "Address" %}</h4>
+<p>
+{{ company_address.content }}
+</p>
+
+<hr/>
 
 {% for object in object_list %}
     {% ifequal type 'testimonial' %}
         {% include 'quoteme/includes/testimonial.html' %}
-    {% endifequal  %}
+  {% endifequal  %}
     {% ifequal type 'quote' %}
         {% include 'quoteme/includes/quote.html' %}
     {% endifequal %}

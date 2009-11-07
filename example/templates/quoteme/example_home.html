@@ -1,13 +1,15 @@
-{% load quoteme_tags %}
+{% load quoteme_tags i18n %}
 
 <html>
 <body>
 
 {% block content %}
-<h1>Django-QuoteMe</h1>
+<h1>{% trans "Django-QuoteMe" %}</h1>
 <ul style="margin-bottom: 2.8em">
-    <li><a href="{% url quote_list %}">View Quotes</a></li>
-    <li><a href="{% url testimonial_list %}">View Testimonials</a></li>
+    <li><a href="{% url quote_list %}">{% trans "View Quotes" %}</a></li>
+    <li><a href="{% url testimonial_list %}">{% trans "View Testimonials" %}</a></li>
+    <li><a href="{% url custom_example %}">{% trans "View Example Custom Quote List with Company Name" %}</a></li>
+    <li><a href="{% url quotes_list_by_tag "creativity" %}">{% trans "Quotes with tag 'creativity'" %}</a></li>
 </ul>
 
 <h2>Random Quote</h2>
