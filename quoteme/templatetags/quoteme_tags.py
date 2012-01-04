@@ -14,7 +14,7 @@ class RandomNode(template.Node):
         try:
             obj = self.model.objects.published().order_by('?')[0]
             context[self.varname] = obj
-        except template.VariableDoesNotExist:
+        except (template.VariableDoesNotExist, IndexError):
             context[self.varname] = ''
             pass
         return ''
